@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarceloAriasweb</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        
+        .presentacion {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .presentacion img {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        .formularioseccion {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        label {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        textarea {
+            height: 150px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .mensajeerror {
+            color: #e74c3c;
+            font-size: 0.8rem;
+        }
+        
+        .mensajeexito {
+            color: #2ecc71;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+        
+        #estilo1 {
+            transition: color 0.3s ease;
+        }
+        
+        .estilo2 {
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        #btnIncrementar {
+            margin: 1rem 0;
+        }
+        
+        #contador {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        
+        .volver-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .volver-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .volver-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <div class="logo">MarceloAriasweb</div>
+        <nav>
+            <ul>
+                <li><a href="#Inicio">Inicio</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <
+    <section id="Inicio" class="presentacion">
+        <img src="img/logouct_blanco.png" alt="Imagen principal">
+        <div class="textopresentacion">
+            <h1>Bienvenido a MarceloAriasweb</h1>
+            <p>Contáctame para mayor información.</p>
+        </div>
+    </section>
+
+   
+    <section id="Contacto" class="formularioseccion">
+        <h2>Contacto</h2>
+        <form id="formulario">
+            <label for="Nombre">Nombre:</label>
+            <input type="text" id="Nombre" name="Nombre" required>
+            <span id="errorNombre" class="mensajeerror"></span>
+
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required>
+            <span id="errorEmail" class="mensajeerror"></span>
+
+            <label for="Mensaje">Mensaje:</label>
+            <textarea id="Mensaje" name="Mensaje" required></textarea>
+            <span id="errorMensaje" class="mensajeerror"></span>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="mensajeexito" class="mensajeexito"></p>
+    </section>
+
+    
+    <div class="volver-container">
+        <a href="index.html" class="volver-btn">← Volver al Portafolio</a>
+    </div>
+
+    
+    <footer>
+        <p>© 2025 MarceloAriasweb</p>
+    </footer>
+
+    <script>
+        
+        document.getElementById("estilo1").addEventListener("mouseover", porencima);
+        document.getElementById("estilo1").addEventListener("mouseout", alquitar);
+
+        
+        function porencima() {
+            document.getElementById("estilo1").style.color = "brown";
+        }
+
+        function alquitar() {
+            document.getElementById("estilo1").style.color = "black";
+        }
+    </script>
+
+    <script>
+        const elementos = document.querySelectorAll('.estilo2');
+
+       
+        function cambiarColor() {
+            
+            this.style.color = 'lightblue';
+        }
+
+        
+        elementos.forEach(function(elemento) {
+            elemento.addEventListener('click', cambiarColor);
+        });
+    </script>
+
+    <script>
+        
+        const parrafos = document.querySelectorAll('p');
+
+    
+        function cambiarColorConClickDerecho(event) {
+            this.style.color = 'lightgreen';  
+        }
+
+        
+        parrafos.forEach(function(parrafo) {
+            parrafo.addEventListener('contextmenu', cambiarColorConClickDerecho);
+        });
+    </script>
+    
+    <script>
+       
+        const btnIncrementar = document.getElementById('btnIncrementar');
+        const contador = document.getElementById('contador');
+
+       
+        let clicks = 0;
+
+        
+        function incrementarContador() {
+            clicks++;  
+            contador.textContent = clicks;  
+        }
+
+        
+        btnIncrementar.addEventListener('click', incrementarContador);
+    </script>
+</body>
+</html> 
